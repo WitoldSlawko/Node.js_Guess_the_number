@@ -19,20 +19,20 @@ io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     var answer  = Number(msg);
     if (randomer > answer){
-      io.emit('chat message', 'Sorry, the input number is TOO LOW');
-      console.log('Sorry, the input number is TOO LOW');
+      io.emit('chat message', 'Sorry, the input number '+answer+' is TOO LOW');
+      console.log('Sorry, the input number '+answer+' is TOO LOW');
     }
     else if (randomer < answer){
-      io.emit('chat message', 'Sorry, the input number is TOO HIGH');
-      console.log('Sorry, the input number is TOO HIGH');
+      io.emit('chat message', 'Sorry, the input number '+answer+' is TOO HIGH');
+      console.log('Sorry, the input number '+answer+' is TOO HIGH');
     }
     else if (randomer == answer) {
-      io.emit('chat message', 'FANTASTIC ! YOU GUESSED THE SEARCHING NUMBER !!! Reload page for new guess !');
-      console.log('FANTASTIC ! YOU GUESSED THE SEARCHING NUMBER !!! Reload page for new guess !')
+      io.emit('chat message', 'FANTASTIC ! YOU GUESSED THE SEARCHING NUMBER '+answer+' !!! Reload page for new guess !');
+      console.log('FANTASTIC ! YOU GUESSED THE SEARCHING NUMBER '+answer+' !!! Reload page for new guess !')
     }
     else {
-      io.emit('chat message', 'Sorry, BAD INPUT. It must be a number');
-      console.log('Sorry, BAD INPUT. It must be a number')
+      io.emit('chat message', "Sorry ' "+msg+" ', is a BAD INPUT. It must be a number");
+      console.log("Sorry ' "+msg+" ', is  a BAD INPUT. It must be a number")
     }
   });
 });
