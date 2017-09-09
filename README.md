@@ -1,6 +1,6 @@
 # Node.js_Guess_the_number
 Node.js client-server app, with express and socket.io, for guessing random number from 1 to 10 000.
 
-#To run:
-$ npm install or $ yarn install
-$ npm start or $ node index.js
+### To run: <br />
+$ npm install or $ yarn install <br />
+$ npm start or $ node index.js <br />
