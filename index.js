@@ -18,7 +18,7 @@ io.on('connection', function(socket){
   
   socket.on('chat message', function(msg){
     var myDate = new Date();
-    var mySeconds = Number(myDate.getSeconds()) < 10 ? '0' + myDate.getSeconds() :  myDate.getSeconds();
+    var mySeconds = Number(myDate.getSeconds()) < 10 ? '0' + myDate.getSeconds() : myDate.getSeconds();
     var myTime = myDate.getHours() + ':' + myDate.getMinutes() + ':' + mySeconds;
     var answer  = Number(msg);
     if (randomer > answer){
@@ -30,8 +30,8 @@ io.on('connection', function(socket){
       console.log(myTime+' Sorry, the input number '+answer+' is TOO HIGH');
     }
     else if (randomer == answer) {
-      io.emit('chat message', myTime+' FANTASTIC ! YOU GUESSED THE SEARCHING NUMBER '+answer+' !!! Reload page for new guess !');
-      console.log(myTime+' FANTASTIC ! YOU GUESSED THE SEARCHING NUMBER '+answer+' !!! Reload page for new guess !')
+      io.emit('chat message', myTime+' FANTASTIC ! YOU GUESSED THE SEARCHING NUMBER '+answer+' !!! Reload page for new number to guess !');
+      console.log(myTime+' FANTASTIC ! YOU GUESSED THE SEARCHING NUMBER '+answer+' !!! Reload page for new number to guess !')
     }
     else {
       io.emit('chat message', myTime+" Sorry ' "+msg+" ', is a BAD INPUT. It must be a number");
