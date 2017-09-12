@@ -33,7 +33,7 @@
         });
         
         function checking(array){
-          console.log(array)
+          //console.log(array)
           var guess = Math.floor(Math.random() * ((array[1]-array[0])+1) + array[0]);
           //var guess = _.random(array[0], array[1])
           socket.emit('chat message', guess);
@@ -42,7 +42,7 @@
             window.scrollTo(0, document.body.scrollHeight);
             return joker = resp.joker;
           });
-          console.log( guess,  joker)
+          //console.log( guess,  joker)
           if (guess < joker){            
             array[0] = guess
             //return array
