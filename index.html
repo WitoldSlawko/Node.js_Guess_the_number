@@ -37,7 +37,7 @@
           var guess = Math.floor(Math.random() * ((array[1]-array[0])+1) + array[0]);
           //var guess = _.random(array[0], array[1])
           socket.emit('chat message', guess);
-          socket.on('chat message', function(resp){
+          socket.once('chat message', function(resp){
             $('#messages').append($('<li>').text(resp.msg));
             window.scrollTo(0, document.body.scrollHeight);
             return joker = resp.joker;
